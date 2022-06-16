@@ -2,11 +2,13 @@
   "name": "vue-admin-template",
   "version": "4.4.0",
   "description": "A vue admin template with Element UI & axios & iconfont & permission control & lint",
-  "author": "Pan <panfree23@gmail.com>",
+  "author": "doubleh",
   "scripts": {
-    "dev": "vue-cli-service serve",
-    "build:prod": "vue-cli-service build",
-    "build:stage": "vue-cli-service build --mode staging",
+    "start": "vue-cli-service serve",
+    "devcater": "vue-cli-service build --mode devcater",
+    "testing": "vue-cli-service build --mode testing",
+    "uat": "vue-cli-service build --mode uat",
+    "build": "vue-cli-service build",
     "preview": "node build/index.js --preview",
     "svgo": "svgo -f src/icons/svg --config=src/icons/svgo.yml",
     "lint": "eslint --ext .js,.vue src",
@@ -15,15 +17,18 @@
   },
   "dependencies": {
     "axios": "0.18.1",
-    "core-js": "3.6.5",
+    "core-js": "^3.22.8",
+    "echarts": "^5.3.3",
     "element-ui": "2.13.2",
     "js-cookie": "2.2.0",
     "normalize.css": "7.0.0",
     "nprogress": "0.2.0",
     "path-to-regexp": "2.4.0",
+    "screenfull": "4.2.0",
     "vue": "2.6.10",
     "vue-router": "3.0.6",
-    "vuex": "3.1.0"
+    "vuex": "3.1.0",
+    "wangeditor": "^4.7.15"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "4.4.4",

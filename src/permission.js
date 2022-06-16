@@ -1,3 +1,8 @@
+/*
+ * @Description:
+ * @Date: 2021-08-20 10:56:15
+ * @LastEditTime: 2022-06-13 15:59:22
+ */
 import router from './router'
 import store from './store'
 import { Message } from 'element-ui'
@@ -32,9 +37,12 @@ router.beforeEach(async(to, from, next) => {
       } else {
         try {
           // get user info
-          await store.dispatch('user/getInfo')
-
-          next()
+          const { roles } = await store.dispatch('user/getInfo')
+          // generate accessible routes map based on roles
+          const accessRoutes = await store.dispatch('permission/generateRoutes', roles)
+          // dynamically add accessible routes
+          router.addRoutes(accessRoutes)
+          next({ ...to })
         } catch (error) {
           // remove token and go to login page to re-login
           await store.dispatch('user/resetToken')

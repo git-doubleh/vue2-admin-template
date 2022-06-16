@@ -1,7 +1,12 @@
+/*
+ * @Description:
+ * @Date: 2021-08-20 10:56:15
+ * @LastEditTime: 2022-06-16 11:15:20
+ */
 const Mock = require('mockjs')
 
 const data = Mock.mock({
-  'items|30': [{
+  'items|10': [{
     id: '@id',
     title: '@sentence(10, 20)',
     'status|1': ['published', 'draft', 'deleted'],

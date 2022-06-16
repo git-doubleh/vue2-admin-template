@@ -1,11 +1,15 @@
+/*
+ * @Description:
+ * @Date: 2021-08-20 10:56:15
+ * @LastEditTime: 2022-06-13 15:43:33
+ */
 import Cookies from 'js-cookie'
 
 const state = {
   sidebar: {
     opened: Cookies.get('sidebarStatus') ? !!+Cookies.get('sidebarStatus') : true,
     withoutAnimation: false
-  },
-  device: 'desktop'
+  }
 }
 
 const mutations = {
@@ -22,9 +26,6 @@ const mutations = {
     Cookies.set('sidebarStatus', 0)
     state.sidebar.opened = false
     state.sidebar.withoutAnimation = withoutAnimation
-  },
-  TOGGLE_DEVICE: (state, device) => {
-    state.device = device
   }
 }
 
@@ -34,9 +35,6 @@ const actions = {
   },
   closeSideBar({ commit }, { withoutAnimation }) {
     commit('CLOSE_SIDEBAR', withoutAnimation)
-  },
-  toggleDevice({ commit }, device) {
-    commit('TOGGLE_DEVICE', device)
   }
 }
 

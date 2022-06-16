@@ -1,3 +1,8 @@
+<!--
+ * @Description:
+ * @Date: 2022-06-13 10:11:07
+ * @LastEditTime: 2022-06-13 15:47:25
+-->
 <template>
   <div v-if="!item.hidden">
     <template v-if="hasOneShowingChild(item.children,item) && (!onlyOneChild.children||onlyOneChild.noShowingChildren)&&!item.alwaysShow">
@@ -29,12 +34,10 @@ import path from 'path'
 import { isExternal } from '@/utils/validate'
 import Item from './Item'
 import AppLink from './Link'
-import FixiOSBug from './FixiOSBug'
 
 export default {
   name: 'SidebarItem',
   components: { Item, AppLink },
-  mixins: [FixiOSBug],
   props: {
     // route object
     item: {
